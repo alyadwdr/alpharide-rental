@@ -1,0 +1,484 @@
+/* =======================================================
+   TRANSAKSI PAGE - COMPACT & FIXED 
+   ======================================================= */
+
+body.transaction-body {
+    background-color: #F3E9DD;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Container Utama */
+.split-screen-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* --- PANEL KIRI (Form) --- */
+.left-panel {
+    flex: 2; /* Sekitar 65% */
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-content-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.main-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #2B2B2B;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    border-bottom: 3px solid #B08D6A;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Input Section Kecil */
+.compact-section {
+    margin-bottom: 15px;
+}
+
+.section-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2B2B2B;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+/* Input Styling Compact */
+.compact-input {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #FFFDF9;
+    border: 1px solid #D6CFC3;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    transition: all 0.2s;
+}
+
+.compact-input:focus {
+    outline: none;
+    border-color: #B08D6A;
+    background-color: #fff;
+}
+
+.compact-input.filled {
+    background-color: #EBE5DC;
+    color: #777;
+    border: none;
+}
+
+/* Date Input */
+.date-wrapper {
+    position: relative;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5D4037;
+    pointer-events: none;
+    font-size: 0.9rem;
+}
+
+.date-field::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0; top: 0;
+}
+
+/* Total Harga */
+.total-section {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+}
+
+.total-section label {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.price-display {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #2B2B2B;
+    line-height: 1.1;
+    margin: 5px 0;
+}
+
+.total-section small {
+    font-size: 0.75rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* --- PANEL KANAN (Hiasan) --- */
+.right-panel {
+    flex: 0.8; 
+    position: relative;
+    padding-right: 100px; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Kartu Dekorasi (Hitam & Coklat) */
+.decoration-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tombol Close */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 120px; 
+    color: rgba(255,255,255,0.6);
+    font-size: 1.8rem;
+    text-decoration: none;
+    line-height: 1;
+    z-index: 100;
+    transition: color 0.3s;
+}
+
+.close-btn:hover { color: #fff; }
+
+/* Panel Atas (Hitam) */
+.panel-top {
+    flex: 1.5; 
+    background-color: #2B2B2B;
+    padding: 60px 30px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Mobil Pop-Out 3D */
+.car-visual-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.car-hero-image {
+    width: 150%; 
+    max-width: none;
+    margin-left: 10%; 
+    filter: drop-shadow(-8px 12px 15px rgba(0,0,0,0.5));
+    z-index: 10;
+}
+
+/* Info Mobil */
+.car-info-stack {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+    z-index: 5;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.car-brand {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.color-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.capacity-info {
+    font-size: 0.8rem;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+/* Dropdown Plat */
+.plat-selector {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 30px;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.plat-dropdown {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.plat-dropdown:focus { outline: none; }
+.plat-dropdown option { background-color: #2B2B2B; }
+
+.status-badge {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.price-per-day {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Panel Bawah (Coklat) */
+.panel-bottom {
+    flex: 1; 
+    background-color: #B08D6A;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-confirm {
+    background-color: #F3E9DD;
+    color: #2B2B2B;
+    border: none;
+    width: 85%;
+    padding: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-confirm:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* --- FOOTER --- */
+.footer {
+    background: #2D2D2D;
+    color: white;
+    padding: 50px 50px 20px;
+    position: relative;
+    z-index: 20;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+/* Footer About (Kiri) & Logo */
+.footer-about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #E8DCC8;
+    margin-bottom: 25px;
+}
+
+/* Social Media */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: #9F8255;
+    transform: translateY(-3px);
+}
+
+/* Footer Heading */
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+    border-bottom: 2px solid #9F8255;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* Links List */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #E8DCC8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #9F8255;
+}
+
+/* Contact Info */
+.footer-contact p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #E8DCC8;
+    margin-bottom: 15px;
+}
+
+.footer-contact a {
+    color: #E8DCC8 !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #9F8255 !important; 
+}
+
+/* Copyright */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .split-screen-container {
+        flex-direction: column;
+    }
+
+    .left-panel {
+        order: 2;
+        padding: 30px 20px;
+    }
+
+    .right-panel {
+        order: 1;
+        height: auto;
+        padding-right: 0;
+    }
+    
+    .car-hero-image {
+        width: 80%;
+        margin-left: 0;
+    }
+
+    /* Responsive Footer */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .footer {
+        padding: 40px 30px 20px;
+    }
+}

@@ -1,0 +1,767 @@
+/* ========================================
+   GLOBAL RESET
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-color: #EAE0D2;
+}
+
+/* ========================================
+   NAVBAR FLOATING - ONE PAGE
+   ======================================== */
+.navbar-floating {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 1300px;
+}
+
+.navbar-capsule {
+    background: #2D2D2D;
+    border-radius: 50px;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo Only */
+.navbar-logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo-only {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Navigation Menu */
+.nav-menu-floating {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #EAE0D2;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link.active {
+    color: #A68763; 
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #A68763; 
+}
+
+/* Kontak link */
+.nav-link-kontak {
+    color: #EAE0D2 !important; 
+}
+
+.nav-link-kontak.active {
+    color: #A68763 !important; 
+}
+
+/* Auth Buttons */
+.nav-auth-floating {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-nav {
+    padding: 9px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-nav-primary {
+    background: #EAE0D2; 
+    color: #2D2D2D; 
+}
+
+.btn-nav-primary:hover {
+    background: #A68763; 
+    color: #EAE0D2; 
+    transform: translateY(-2px);
+}
+
+.btn-nav-secondary {
+    background: #A68763; 
+    color: #EAE0D2; 
+}
+
+.btn-nav-secondary:hover {
+    background: #2D2D2D; 
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   SECTION 1: HERO / BERANDA
+   ======================================== */
+.hero-section-new {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+}
+
+.hero-bg-cream {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #EAE0D2; 
+    z-index: 1;
+}
+
+/* Backdrop circle */
+.hero-backdrop-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 600px;
+    height: 600px;
+    background: #A68763; 
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.hero-container-new {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 0.9fr 1fr 0.7fr;
+    align-items: center;
+    gap: 30px;
+    z-index: 3;
+}
+
+/* Text Content */
+.hero-text-content {
+    z-index: 4;
+    transform: translate(20px, -50px);
+}
+
+.hero-title-caps {
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #2D2D2D; 
+    margin: 0 0 16px 0;
+    letter-spacing: -0.5px;
+}
+
+.hero-divider {
+    width: 200px;
+    height: 1px;
+    background: rgba(45, 45, 45, 0.3);
+    margin: 0 0 18px 0;
+}
+
+.hero-description {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 2;
+    color: #2D2D2D;
+    margin: 0;
+    max-width: 250px;
+}
+
+/* Car Image */
+.hero-car-wrapper {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-car-image {
+    width: 90%;
+    max-width: 550px;
+    height: auto;
+    position: relative;
+    z-index: 3;
+    transform: translate(-40px, 60px);
+}
+
+.hero-car-shadow {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-60%);
+    width: 120%;
+    height: 50px;
+    background: radial-gradient(ellipse at center, 
+                                rgba(0, 0, 0, 1) 20%, 
+                                rgba(0, 0, 0, 0.9) 60%, 
+                                rgba(0, 0, 0, 0) 60%);
+    filter: blur(10px);
+    z-index: 2;
+}
+
+/* Feature Arrows */
+.hero-features-arrows {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.feature-arrow {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.feature-arrow-line {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 1px;
+    background: #2D2D2D; 
+}
+
+.feature-arrow-point {
+    position: absolute;
+    left: 48px;
+    width: 7px;
+    height: 7px;
+    background: #2D2D2D; 
+    border-radius: 50%;
+}
+
+.feature-text {
+    margin-left: 68px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #2D2D2D; 
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.feature-icon {
+    font-size: 14px;
+}
+
+/* ========================================
+   SECTION 2: TENTANG KAMI
+   ======================================== */
+.tentang-section {
+    position: relative;
+    width: 100%;
+    background: #EAE0D2;
+}
+
+/* Dark Background (1/4) */
+.tentang-bg-dark {
+    background: #2D2D2D; 
+    padding: 60px 50px;
+    text-align: center;
+    margin-top: -90px;
+    position: relative; 
+    z-index: 5;
+}
+
+.tentang-header {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+.tentang-divider {
+    width: 160px;
+    height: 1px;
+    background: #EAE0D2; 
+    margin: 0 auto 20px;
+}
+
+.tentang-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #EAE0D2; 
+    letter-spacing: 1px;
+}
+
+.tentang-description {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: #EAE0D2; 
+    text-align: center;
+}
+
+/* Cream Background (3/4) */
+.tentang-bg-cream {
+    background: #EAE0D2; 
+    padding: 60px 50px 80px;
+}
+
+.mengapa-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.mengapa-divider {
+    width: 160px;
+    height: 1.5px;
+    background: #2D2D2D; 
+    margin: 0 auto 20px;
+}
+
+.mengapa-title {
+    font-size: 32px;
+    font-weight: 1500;
+    color: #2D2D2D; 
+    letter-spacing: 0.5px;
+}
+
+/* Reason Cards */
+.reason-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reason-card {
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.reason-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.reason-card p {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.card-brown {
+    background: #A68763; 
+    color: #EAE0D2; 
+}
+
+.card-dark {
+    background: #2D2D2D; 
+    color: #EAE0D2; 
+}
+
+/* ========================================
+   SECTION 3: MOBIL CAROUSEL
+   ======================================== */
+.mobil-section {
+    position: relative;
+    width: 100%;
+    background: #EAE0D2; /* Cream Baru */
+    padding-top: 80px; 
+    padding-bottom: 50px;
+}
+
+.mobil-bg-cream {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Logo di atas */
+.mobil-logo-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.mobil-logo {
+    height: 40px;
+    width: auto;
+    filter: grayscale(1) contrast(1.2);
+}
+
+/* Carousel Container */
+.car-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Carousel Track */
+.car-carousel-track {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+    padding: 0; 
+    margin: 0;
+}
+
+.car-carousel-item {
+    flex: 0 0 600px; 
+    width: 600px;
+    max-width: 60vw;
+    transform: scale(0.6);
+    opacity: 0.4;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.car-carousel-item.active {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 10;
+}
+
+.car-carousel-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 20px rgba(0,0,0,0.3));
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2D2D2D; 
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    color: #EAE0D2; 
+}
+
+.carousel-btn:hover {
+    background: #A68763; 
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 50px;
+}
+
+.carousel-next {
+    right: 50px;
+}
+
+/* Car Info */
+.car-info-fixed {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.car-name {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2D2D2D; 
+    margin-bottom: 10px;
+}
+
+.car-price {
+    font-size: 30px;
+    font-weight: 600;
+    color: #A68763; 
+    margin-bottom: 25px;
+}
+
+.btn-lihat-detail {
+    display: inline-block;
+    background: #2D2D2D; 
+    color: #EAE0D2; 
+    padding: 14px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-lihat-detail:hover {
+    background: #A68763; 
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   FOOTER (BERANDA VERSION)
+   ======================================== */
+.footer-new {
+    background: #2D2D2D; 
+    color: #EAE0D2; 
+    padding: 50px 50px 20px;
+}
+
+.footer-container-new {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+/* Footer Left */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.footer-brand {
+    font-size: 18px;
+    font-weight: 700;
+    color: #EAE0D2; 
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.footer-brand span {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.footer-description {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #EAE0D2; 
+    margin-bottom: 25px;
+}
+
+/* Social Media */
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(234, 224, 210, 0.1); 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #EAE0D2; 
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #A68763; 
+    transform: translateY(-3px);
+}
+
+/* Footer Center & Right */
+.footer-heading {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.footer-divider {
+    width: 80px;
+    height: 2px;
+    background: #A68763; 
+    margin-bottom: 20px;
+}
+
+.footer-menu {
+    list-style: none;
+}
+
+.footer-menu li {
+    margin-bottom: 10px;
+}
+
+.footer-menu a {
+    color: #EAE0D2; 
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #A68763; 
+}
+
+.footer-contact {
+    list-style: none;
+}
+
+.footer-contact li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #EAE0D2; 
+}
+
+.contact-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.footer-contact a {
+    color: #EAE0D2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #A68763; 
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(234, 224, 210, 0.1); 
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #999;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1200px) {
+    .hero-container-new {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 120px;
+    }
+    
+    .hero-features-arrows {
+        display: none;
+    }
+    
+    .hero-backdrop-circle {
+        width: 450px;
+        height: 450px;
+    }
+    
+    .reason-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-container-new {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu-floating {
+        display: none;
+    }
+    
+    .navbar-capsule {
+        padding: 8px 20px;
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-prev { left: 20px; }
+    .carousel-next { right: 20px; }
+}
+
+/* =========================================
+   SCROLLBAR (MAIN PAGE / ONE PAGE)
+   ========================================= */
+
+/* 1. Lebar Scrollbar */
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+/* 2. Track (Jalur Scrollbar) */
+::-webkit-scrollbar-track {
+    background: #EAE0D2; /* Cream Baru */
+}
+
+/* 3. Thumb (Batang Scrollbar) */
+::-webkit-scrollbar-thumb {
+    background-color: #A68763; /* Coklat Baru */
+    border-radius: 10px;
+    border: 3px solid #EAE0D2; /* Border Cream Baru */
+}
+
+/* 4. Hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2D2D2D; /* Dark saat hover */
+}

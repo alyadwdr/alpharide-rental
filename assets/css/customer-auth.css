@@ -1,0 +1,359 @@
+/* Customer Authentication Styles - Login & Register */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-brown: #A68763;
+    --cream-bg: #EAE0D2;
+    --dark-bg: #2D2D2D;
+    --text-dark: #2D2D2D;
+    --border-color: #A68763;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    color: var(--text-dark);
+}
+
+.auth-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: var(--cream-bg);
+    overflow: hidden;
+}
+
+/* Diagonal Dark Background */
+.diagonal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: var(--dark-bg);
+    clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%);
+    z-index: 1;
+}
+
+/* Car Image */
+.car-image {
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1);
+    max-width: 50%;
+    height: auto;
+    z-index: 3;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+}
+
+/* Form Wrapper */
+.auth-form-wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 2;
+    padding-top: 0vh;
+
+    /* Scroll Default (Kanan) */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.auth-content {
+    max-width: 450px;
+    width: 100%;
+    padding-bottom: 50px; 
+}
+
+/* Logo */
+.logo {
+    max-width: 380px;
+    margin-top: 100px;
+    margin-bottom: 0rem;
+    display: block;
+}
+
+/* Title */
+.title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Alert Error */
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px 18px;
+    border-radius: 30px;
+    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
+    border: 1px solid #f5c6cb;
+}
+
+/* Form */
+.login-form {
+    margin-bottom: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 22px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    background: transparent;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-brown);
+    box-shadow: 0 0 0 3px rgba(166, 135, 99, 0.1); 
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+/* Password Group */
+.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+}
+
+.toggle-password:hover {
+    color: var(--primary-brown);
+}
+
+/* Login Button */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-brown);
+    color: var(--cream-bg); 
+    border: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.btn-login:hover {
+    background: var(--dark-bg); 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(166, 135, 99, 0.3);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+/* Footer Text */
+.footer-text {
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 0.85rem;
+}
+
+.link-daftar {
+    color: var(--primary-brown);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-daftar:hover {
+    color: var(--dark-bg); /* Hover jadi gelap */
+    text-decoration: underline;
+}
+
+/* ========================================================
+   REVERSED LAYOUT FOR REGISTER PAGE
+   ======================================================== */
+
+.auth-container.reversed .diagonal-bg {
+    left: auto;
+    right: 0;
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.auth-container.reversed .car-image {
+    left: auto;
+    right: 3%;
+    transform: translateY(-50%) scaleX(1);
+}
+
+/* Wrapper Form Register */
+.auth-container.reversed .auth-form-wrapper {
+    right: auto;
+    left: 0;
+    direction: rtl;
+}
+
+/* Konten di dalam Register */
+.auth-container.reversed .auth-content {
+    direction: ltr;
+}
+
+.auth-container.reversed .logo {
+    margin-top: 20px;
+    margin-bottom: 0rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .diagonal-bg {
+        width: 100%;
+        height: 35%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    }
+    
+    .car-image {
+        left: 50%;
+        top: 20%;
+        transform: translateX(-50%) scaleX(-1);
+        max-width: 60%;
+    }
+    
+    .auth-form-wrapper {
+        width: 100%;
+        top: auto;
+        bottom: 0;
+        height: 65%;
+        padding: 2rem 1.5rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .logo {
+        max-width: 240px;
+    }
+    
+    /* Reversed responsive */
+    .auth-container.reversed .diagonal-bg {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    }
+    
+    .auth-container.reversed .car-image {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) scaleX(-1);
+    }
+    
+    .auth-container.reversed .auth-form-wrapper {
+        left: 0;
+        right: 0;
+        direction: ltr;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-content {
+        padding: 0 1rem;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .logo {
+        max-width: 200px;
+        margin-bottom: 0.6rem;
+    }
+    
+    .form-input {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-login {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================================
+   CUSTOM SCROLLBAR
+   ========================================= */
+
+.auth-form-wrapper::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track (Jalur) */
+.auth-form-wrapper::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+/* Thumb (Batang) */
+.auth-form-wrapper::-webkit-scrollbar-thumb {
+    background-color: transparent; 
+    border-radius: 10px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Thumb (Batang) */
+.auth-form-wrapper:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(166, 135, 99, 0.5); /* Coklat transparan */
+}
+
+/* Thumb (Batang) */
+.auth-form-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-brown); /* Coklat solid */
+}

@@ -1,0 +1,274 @@
+/* ========================================
+   NAVBAR FLOATING - UNTUK HALAMAN BIASA
+   (kontak.php, profil.php, transaksi.php)
+   ======================================== */
+
+/* Override navbar lama dengan floating navbar */
+.navbar {
+    display: none !important; /* Hide old navbar */
+}
+
+.navbar-floating {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 1300px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-capsule {
+    background: #2D2D2D; /* Dark */
+    border-radius: 50px;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo-only {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-menu-floating {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu-floating li {
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #EAE0D2;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    color: #A68763;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #A68763;
+}
+
+.nav-auth-floating {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-nav {
+    padding: 9px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-nav-primary {
+    background: #EAE0D2;
+    color: #2D2D2D; 
+}
+
+.btn-nav-primary:hover {
+    background: #A68763; 
+    color: #EAE0D2;
+    transform: translateY(-2px);
+}
+
+.btn-nav-secondary {
+    background: #A68763;
+    color: #EAE0D2;
+}
+
+.btn-nav-secondary:hover {
+    background: #2D2D2D; 
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   BODY PADDING TOP - Untuk space navbar
+   ======================================== */
+body.customer {
+    padding-top: 100px;
+}
+
+/* ========================================
+   FOOTER - UNTUK HALAMAN BIASA
+   ======================================== */
+.footer {
+    background: #2D2D2D; 
+    color: #EAE0D2; 
+    padding: 50px 50px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #EAE0D2; 
+    letter-spacing: 0.5px;
+}
+
+.footer-about p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #EAE0D2; 
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(234, 224, 210, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #EAE0D2; /* Cream */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: #A68763;
+    transform: translateY(-3px);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #EAE0D2;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.footer-links a:hover {
+    color: #A68763;
+    opacity: 1;
+}
+
+.footer-contact p {
+    font-size: 13px;
+    line-height: 2;
+    color: #EAE0D2;
+    margin-bottom: 12px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.footer-contact a {
+    color: #EAE0D2; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #A68763; 
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(234, 224, 210, 0.1);
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #EAE0D2; 
+    margin: 0;
+    opacity: 0.6;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer {
+        padding: 40px 30px 20px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .nav-menu-floating {
+        display: none;
+    }
+    
+    .navbar-capsule {
+        padding: 8px 20px;
+    }
+    
+    body.customer {
+        padding-top: 80px;
+    }
+}
