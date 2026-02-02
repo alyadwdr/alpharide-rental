@@ -19,6 +19,8 @@ $customer_files = ['kontak.php', 'profil.php', 'transaksi.php', 'katalog.php', '
     <?php if (in_array($current_page, $onepage_files)): ?>
         <!-- One-page CSS untuk beranda -->
         <link rel="stylesheet" href="../assets/css/customer-onepage.css">
+        <!-- Scroll Reveal Animations -->
+        <link rel="stylesheet" href="../assets/css/scroll-reveal.css">
     <?php else: ?>
         <!-- Customer CSS biasa untuk halaman lain -->
         <link rel="stylesheet" href="../assets/css/style.css">

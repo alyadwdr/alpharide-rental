@@ -13,14 +13,17 @@ while ($car = mysqli_fetch_assoc($result_cars)) {
 }
 ?>
 
-<!-- SECTION 1: HERO / BERANDA -->
+<!-- ════════════════════════════════════════
+     SECTION 1: HERO / BERANDA
+     ════════════════════════════════════════ -->
 <section id="beranda" class="hero-section-new">
     <div class="hero-bg-cream"></div>
     <div class="hero-backdrop-circle"></div>
     
     <div class="hero-container-new">
-        <!-- Left: Text Content -->
-        <div class="hero-text-content">
+
+        <!-- Left: Text Content — slide dari kiri -->
+        <div class="hero-text-content" data-reveal="fade-left" data-delay="200">
             <h1 class="hero-title-caps">SEWA KENDARAAN<br>LEBIH PRAKTIS DAN<br>TERPERCAYA</h1>
             <div class="hero-divider"></div>
             <p class="hero-description">
@@ -28,15 +31,15 @@ while ($car = mysqli_fetch_assoc($result_cars)) {
             </p>
         </div>
         
-        <!-- Center: Car Image -->
-        <div class="hero-car-wrapper">
+        <!-- Center: Car Image — zoom in -->
+        <div class="hero-car-wrapper" data-reveal="zoom-in" data-delay="400">
             <img src="../assets/images/cars/hero-car.png" alt="Alpharide Car" class="hero-car-image">
             <div class="hero-car-shadow"></div>
         </div>
         
-        <!-- Right: Feature Arrows -->
-        <div class="hero-features-arrows">
-            <div class="feature-arrow feature-arrow-1">
+        <!-- Right: Feature Arrows — stagger dari kanan, satu per satu -->
+        <div class="hero-features-arrows" data-stagger>
+            <div class="feature-arrow feature-arrow-1" data-reveal="fade-right">
                 <div class="feature-arrow-line"></div>
                 <div class="feature-arrow-point"></div>
                 <div class="feature-text">
@@ -45,7 +48,7 @@ while ($car = mysqli_fetch_assoc($result_cars)) {
                 </div>
             </div>
             
-            <div class="feature-arrow feature-arrow-2">
+            <div class="feature-arrow feature-arrow-2" data-reveal="fade-right">
                 <div class="feature-arrow-line"></div>
                 <div class="feature-arrow-point"></div>
                 <div class="feature-text">
@@ -54,7 +57,7 @@ while ($car = mysqli_fetch_assoc($result_cars)) {
                 </div>
             </div>
             
-            <div class="feature-arrow feature-arrow-3">
+            <div class="feature-arrow feature-arrow-3" data-reveal="fade-right">
                 <div class="feature-arrow-line"></div>
                 <div class="feature-arrow-point"></div>
                 <div class="feature-text">
@@ -63,7 +66,7 @@ while ($car = mysqli_fetch_assoc($result_cars)) {
                 </div>
             </div>
             
-            <div class="feature-arrow feature-arrow-4">
+            <div class="feature-arrow feature-arrow-4" data-reveal="fade-right">
                 <div class="feature-arrow-line"></div>
                 <div class="feature-arrow-point"></div>
                 <div class="feature-text">
@@ -75,15 +78,21 @@ while ($car = mysqli_fetch_assoc($result_cars)) {
     </div>
 </section>
 
-<!-- SECTION 2: TENTANG KAMI -->
+<!-- ════════════════════════════════════════
+     SECTION 2: TENTANG KAMI
+     ════════════════════════════════════════ -->
 <section id="tentang-kami" class="tentang-section">
+
     <!-- Dark Background (1/4) -->
     <div class="tentang-bg-dark">
         <div class="tentang-header">
-            <div class="tentang-divider"></div>
-            <h2 class="tentang-title">TENTANG KAMI</h2>
+            <!-- Garis dekoratif — animasi scaleX (line) -->
+            <div class="tentang-divider" data-reveal="line"></div>
+            <!-- Judul — fade up -->
+            <h2 class="tentang-title" data-reveal="fade-up" data-delay="150">TENTANG KAMI</h2>
         </div>
-        <p class="tentang-description">
+        <!-- Deskripsi — fade up, lebih lambat -->
+        <p class="tentang-description" data-reveal="fade-up" data-delay="300" data-duration="slow">
             Alpharide Rental merupakan penyedia layanan rental kendaraan yang berkomitmen untuk memberikan pengalaman perjalanan yang aman, nyaman, dan menyenangkan. Kami menyediakan berbagai pilihan kendaraan, baik mobil maupun motor, yang dapat digunakan untuk berbagai kebutuhan perjalanan, mulai dari aktivitas harian hingga perjalanan jarak jauh. Kami selalu menjaga kualitas armada melalui perawatan rutin dan pengecekan berkala untuk memastikan setiap kendaraan berada dalam kondisi terbaik sebelum digunakan. Dengan dukungan tim yang profesional dan berpengalaman, Alpharide Rental hadir sebagai mitra perjalanan yang siap melayani pelanggan dengan sepenuh hati.
         </p>
     </div>
@@ -91,25 +100,28 @@ while ($car = mysqli_fetch_assoc($result_cars)) {
     <!-- Cream Background (3/4) -->
     <div class="tentang-bg-cream">
         <div class="mengapa-header">
-            <div class="mengapa-divider"></div>
-            <h2 class="mengapa-title">MENGAPA MEMILIH ALPHARIDE RENTAL?</h2>
+            <!-- Garis dekoratif — line -->
+            <div class="mengapa-divider" data-reveal="line"></div>
+            <!-- Judul — fade up -->
+            <h2 class="mengapa-title" data-reveal="fade-up" data-delay="100">MENGAPA MEMILIH ALPHARIDE RENTAL?</h2>
         </div>
         
-        <div class="reason-cards">
-            <!-- Card 1: Brown -->
-            <div class="reason-card card-brown">
+        <!-- Reason Cards — stagger: muncul satu-satu dari bawah -->
+        <div class="reason-cards" data-stagger>
+            <!-- Card 1: Brown — fade up -->
+            <div class="reason-card card-brown" data-reveal="fade-up">
                 <h3>ARMADA TERAWAT</h3>
                 <p>Setiap kendaraan di Alpharide Rental dirawat dan dicek secara berkala untuk memastikan kondisi mesin, interior, dan eksterior tetap prima. Kami menjaga kebersihan serta kenyamanan armada agar siap digunakan untuk berbagai kebutuhan perjalanan dengan aman dan nyaman.</p>
             </div>
             
-            <!-- Card 2: Dark -->
-            <div class="reason-card card-dark">
+            <!-- Card 2: Dark — fade up -->
+            <div class="reason-card card-dark" data-reveal="fade-up">
                 <h3>SYARAT JELAS<br>& TRANSPARAN</h3>
                 <p>Kami menerapkan ketentuan penyewaan yang jelas dan mudah dipahami oleh pelanggan. Seluruh informasi terkait durasi sewa, penggunaan kendaraan, serta ketentuan lainnya disampaikan secara terbuka demi memberikan rasa aman dan kepercayaan.</p>
             </div>
             
-            <!-- Card 3: Brown -->
-            <div class="reason-card card-brown">
+            <!-- Card 3: Brown — fade up -->
+            <div class="reason-card card-brown" data-reveal="fade-up">
                 <h3>PELAYANAN<br>RESPONSIF & RAMAH</h3>
                 <p>Tim Alpharide Rental siap memberikan pelayanan yang cepat, ramah, dan profesional. Kami selalu berusaha merespons setiap pertanyaan dan kebutuhan pelanggan dengan baik agar proses penyewaan berjalan dengan lancar.</p>
             </div>
@@ -117,9 +129,12 @@ while ($car = mysqli_fetch_assoc($result_cars)) {
     </div>
 </section>
 
-<!-- SECTION 3: MOBIL (CAROUSEL) -->
+<!-- ════════════════════════════════════════
+     SECTION 3: MOBIL (CAROUSEL)
+     ════════════════════════════════════════ -->
 <section id="mobil" class="mobil-section">
     <div class="mobil-bg-cream">
+
         <!-- Logo -->
         <div class="mobil-logo-wrapper">
             <img src="../assets/images/logo.png" alt="Alpharide" class="mobil-logo">
@@ -171,8 +186,13 @@ while ($car = mysqli_fetch_assoc($result_cars)) {
 <!-- FOOTER -->
 <?php include 'includes/footer.php'; ?>
 
+<!-- ════════════════════════════════════════
+     SCROLL REVEAL ENGINE — load sebelum </body>
+     ════════════════════════════════════════ -->
+<script src="../assets/js/scroll-reveal.js"></script>
+
 <script>
-// Carousel JavaScript
+// ── Carousel JavaScript ──────────────────────────────────────
 const cars = <?php echo json_encode($cars); ?>;
 const totalCars = cars.length;
 let currentIndex = 0;

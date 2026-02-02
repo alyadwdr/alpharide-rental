@@ -1,0 +1,152 @@
+/* ========================================
+   SCROLL REVEAL ANIMATIONS
+   Digunakan di beranda.php (one-page)
+   ======================================== */
+
+/* ──────────────────────────────────────
+   1. BASE STATE — semua elemen reveal
+      dimulai dari "tersembunyi"
+   ────────────────────────────────────── */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(40px);          /* default: dari bawah */
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+/* state VISIBLE — di-trigger oleh JS */
+[data-reveal].visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ──────────────────────────────────────
+   2. VARIASI ARAH
+      data-reveal="fade-up"      (default)
+      data-reveal="fade-down"
+      data-reveal="fade-left"
+      data-reveal="fade-right"
+      data-reveal="zoom-in"
+      data-reveal="fade"         (opacity saja)
+   ────────────────────────────────────── */
+
+/* Fade Up (default — sudah di-set di base) */
+[data-reveal="fade-up"] {
+    transform: translateY(50px);
+}
+[data-reveal="fade-up"].visible {
+    transform: translateY(0);
+}
+
+/* Fade Down */
+[data-reveal="fade-down"] {
+    transform: translateY(-50px);
+}
+[data-reveal="fade-down"].visible {
+    transform: translateY(0);
+}
+
+/* Fade Left (masuk dari kiri) */
+[data-reveal="fade-left"] {
+    transform: translateX(-60px);
+}
+[data-reveal="fade-left"].visible {
+    transform: translateX(0);
+}
+
+/* Fade Right (masuk dari kanan) */
+[data-reveal="fade-right"] {
+    transform: translateX(60px);
+}
+[data-reveal="fade-right"].visible {
+    transform: translateX(0);
+}
+
+/* Zoom In */
+[data-reveal="zoom-in"] {
+    transform: scale(0.75);
+    opacity: 0;
+}
+[data-reveal="zoom-in"].visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Fade (opacity saja, tanpa gerak) */
+[data-reveal="fade"] {
+    transform: none;
+    opacity: 0;
+}
+[data-reveal="fade"].visible {
+    opacity: 1;
+}
+
+/* ──────────────────────────────────────
+   3. STAGGER — delay bertambah per-anak
+      Gunakan: data-stagger pada parent
+      Anak-anak secara otomatis dapat
+      delay 0.1s, 0.2s, 0.3s … via JS
+      (lihat scroll-reveal.js)
+
+      Fallback CSS delay juga tersedia
+      untuk 1–8 anak:
+   ────────────────────────────────────── */
+[data-stagger] > [data-reveal]:nth-child(1) { transition-delay: 0s; }
+[data-stagger] > [data-reveal]:nth-child(2) { transition-delay: 0.1s; }
+[data-stagger] > [data-reveal]:nth-child(3) { transition-delay: 0.2s; }
+[data-stagger] > [data-reveal]:nth-child(4) { transition-delay: 0.3s; }
+[data-stagger] > [data-reveal]:nth-child(5) { transition-delay: 0.4s; }
+[data-stagger] > [data-reveal]:nth-child(6) { transition-delay: 0.5s; }
+[data-stagger] > [data-reveal]:nth-child(7) { transition-delay: 0.6s; }
+[data-stagger] > [data-reveal]:nth-child(8) { transition-delay: 0.7s; }
+
+/* ──────────────────────────────────────
+   4. CUSTOM DELAY — manual override
+      data-delay="200"   → 200ms
+   ────────────────────────────────────── */
+/* Di-set langsung via inline style oleh JS,
+   jadi tidak perlu CSS tambahan di sini. */
+
+/* ──────────────────────────────────────
+   5. DURATION VARIANTS
+      data-duration="fast"   → 0.45s
+      data-duration="slow"   → 1s
+   ────────────────────────────────────── */
+[data-duration="fast"] {
+    transition-duration: 0.45s !important;
+}
+[data-duration="slow"] {
+    transition-duration: 1s !important;
+}
+
+/* ──────────────────────────────────────
+   6. DIVIDER / LINE — animasi lebar
+      Khusus elemen garis dekoratif
+      ('.tentang-divider', '.mengapa-divider')
+   ────────────────────────────────────── */
+[data-reveal="line"] {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal="line"].visible {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* ──────────────────────────────────────
+   7. COUNTER / NUMBER — pulse kecil
+      setelah muncul (opsional accent)
+   ────────────────────────────────────── */
+@keyframes subtlePulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+[data-reveal="zoom-in"].visible {
+    animation: subtlePulse 0.5s ease 0.7s both;
+}
